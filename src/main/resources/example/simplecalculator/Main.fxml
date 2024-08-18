@@ -1,16 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="example.simplecalculator.Controller">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+
+<AnchorPane fx:id="myScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="433.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="example.simplecalculator.Controller">
+      <Button fx:id="buttonZero" layoutX="39.0" layoutY="449.0" mnemonicParsing="false" onAction="#buttonZeroClick" prefHeight="75.0" prefWidth="74.0" text="0">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonEquals" layoutX="113.0" layoutY="449.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="74.0" text="=">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonReset" layoutX="187.0" layoutY="449.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="74.0" text="C">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonDiv" layoutX="306.0" layoutY="449.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="74.0" text="/">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonSeven" layoutX="39.0" layoutY="373.0" mnemonicParsing="false" onAction="#buttonSevenClick" prefHeight="75.0" prefWidth="74.0" text="7">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonFour" layoutX="39.0" layoutY="297.0" mnemonicParsing="false" onAction="#buttonFourClick" prefHeight="75.0" prefWidth="74.0" text="4">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonOne" layoutX="39.0" layoutY="221.0" mnemonicParsing="false" onAction="#buttonOneClick" prefHeight="75.0" prefWidth="74.0" text="1">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonTwo" layoutX="113.0" layoutY="221.0" mnemonicParsing="false" onAction="#buttonTwoClick" prefHeight="75.0" prefWidth="74.0" text="2">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonThree" layoutX="187.0" layoutY="221.0" mnemonicParsing="false" onAction="#buttonThreeClick" prefHeight="75.0" prefWidth="74.0" text="3">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonSix" layoutX="187.0" layoutY="297.0" mnemonicParsing="false" onAction="#buttonSixClick" prefHeight="75.0" prefWidth="74.0" text="6">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonNine" layoutX="187.0" layoutY="373.0" mnemonicParsing="false" onAction="#buttonNineClick" prefHeight="75.0" prefWidth="74.0" text="9">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonEight" layoutX="113.0" layoutY="373.0" mnemonicParsing="false" onAction="#buttonEightClick" prefHeight="75.0" prefWidth="74.0" text="8">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonFive" layoutX="113.0" layoutY="297.0" mnemonicParsing="false" onAction="#buttonFiveClick" prefHeight="75.0" prefWidth="74.0" text="5">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonMul" layoutX="306.0" layoutY="373.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="74.0" text="x">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonSub" layoutX="306.0" layoutY="297.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="74.0" text="-">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonAdd" layoutX="306.0" layoutY="221.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="74.0" text="+">
+         <font>
+            <Font name="Avenir Black" size="36.0" />
+         </font>
+      </Button>
+      <TextField fx:id="outputTextField" layoutX="39.0" layoutY="48.0" prefHeight="148.0" prefWidth="342.0" />
+</AnchorPane>

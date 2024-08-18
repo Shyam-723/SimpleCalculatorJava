@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73d215de-050c-44d9-818d-5df9ce036c9f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/example/simplecalculator/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/example/simplecalculator/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/example/simplecalculator/Main.fxml" afterDir="false" />
+    <list default="true" id="73d215de-050c-44d9-818d-5df9ce036c9f" name="Changes" comment="Intial set Up">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/simplecalculator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/simplecalculator/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/simplecalculator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/simplecalculator/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/example/simplecalculator/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/example/simplecalculator/Main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +18,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Shyam-723"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Shyam-723/SimpleCalculatorJava.git",
+    "accountId": "da2330cd-a86d-4810-99c4-5410f41fa13e"
+  }
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -76,11 +78,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723999114467</updated>
-      <workItem from="1723999115678" duration="316000" />
+      <workItem from="1723999115678" duration="1497000" />
     </task>
+    <task id="LOCAL-00001" summary="Intial set Up">
+      <option name="closed" value="true" />
+      <created>1723999563812</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723999563812</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Intial set Up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Intial set Up" />
   </component>
 </project>
