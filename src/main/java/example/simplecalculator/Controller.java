@@ -7,36 +7,59 @@ public class Controller {
     @FXML
     private TextField outputTextField;
 
+    @FXML
+    private TextField historyTextField;
+
     private String currNumberString = "";
     private int calculatedNumber = 0;
     private boolean isBinaryFunction = false;
 
-    private int UpdateNumber() {
+
+    private void CalculateNumber(String binaryFunction) {
+        int currNumber = updateCurrNumber();
+
+        switch(binaryFunction){
+            case "+":
+                calculatedNumber +=  currNumber;
+                break;
+            case "-":
+                calculatedNumber -= currNumber;
+                break;
+            case "*":
+                calculatedNumber *= currNumber;
+                break;
+            case "/":
+                calculatedNumber /= currNumber;
+                break;
+        }
+    }
+
+    private int updateCurrNumber() {
         currNumberString = outputTextField.getText();
         return Integer.parseInt(currNumberString);
     }
 
     @FXML void buttonAddClick() {
-        UpdateNumber();
         outputTextField.setText("+");
+        historyTextField.appendText(" + ");
         isBinaryFunction = true;
     }
 
     @FXML void buttonSubClick() {
-        UpdateNumber();
         outputTextField.setText("-");
+        historyTextField.appendText(" - ");
         isBinaryFunction = true;
     }
 
     @FXML void buttonMulClick() {
-        UpdateNumber();
         outputTextField.setText("*");
+        historyTextField.appendText(" * ");
         isBinaryFunction = true;
     }
 
     @FXML void buttonDivClick() {
-        UpdateNumber();
         outputTextField.setText("/");
+        historyTextField.appendText(" / ");
         isBinaryFunction = true;
     }
 
@@ -58,5 +81,7 @@ public class Controller {
             outputTextField.setText(value);
             isBinaryFunction = false;
         }
+
+        historyTextField.appendText(value);
     }
 }
