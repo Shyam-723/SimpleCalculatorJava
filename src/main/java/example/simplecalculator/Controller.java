@@ -7,54 +7,56 @@ public class Controller {
     @FXML
     private TextField outputTextField;
 
-    @FXML
-    void buttonOneClick() {
-        outputTextField.appendText("1");
+    private String currNumberString = "";
+    private int calculatedNumber = 0;
+    private boolean isBinaryFunction = false;
+
+    private int UpdateNumber() {
+        currNumberString = outputTextField.getText();
+        return Integer.parseInt(currNumberString);
     }
 
-    @FXML
-    void buttonTwoClick() {
-        outputTextField.appendText("2");
+    @FXML void buttonAddClick() {
+        UpdateNumber();
+        outputTextField.setText("+");
+        isBinaryFunction = true;
     }
 
-    @FXML
-    void buttonThreeClick() {
-        outputTextField.appendText("3");
+    @FXML void buttonSubClick() {
+        UpdateNumber();
+        outputTextField.setText("-");
+        isBinaryFunction = true;
     }
 
-    @FXML
-    void buttonFourClick() {
-        outputTextField.appendText("4");
+    @FXML void buttonMulClick() {
+        UpdateNumber();
+        outputTextField.setText("*");
+        isBinaryFunction = true;
     }
 
-    @FXML
-    void buttonFiveClick() {
-        outputTextField.appendText("5");
+    @FXML void buttonDivClick() {
+        UpdateNumber();
+        outputTextField.setText("/");
+        isBinaryFunction = true;
     }
 
-    @FXML
-    void buttonSixClick() {
-        outputTextField.appendText("6");
-    }
+    @FXML void buttonOneClick() { updateTextField("1"); }
+    @FXML void buttonTwoClick() { updateTextField("2"); }
+    @FXML void buttonThreeClick() { updateTextField("3"); }
+    @FXML void buttonFourClick() { updateTextField("4"); }
+    @FXML void buttonFiveClick() { updateTextField("5"); }
+    @FXML void buttonSixClick() { updateTextField("6"); }
+    @FXML void buttonSevenClick() { updateTextField("7"); }
+    @FXML void buttonEightClick() { updateTextField("8"); }
+    @FXML void buttonNineClick() { updateTextField("9"); }
+    @FXML void buttonZeroClick() { updateTextField("0"); }
 
-    @FXML
-    void buttonSevenClick() {
-        outputTextField.appendText("7");
+    private void updateTextField(String value) {
+        if (!isBinaryFunction) {
+            outputTextField.appendText(value);
+        } else {
+            outputTextField.setText(value);
+            isBinaryFunction = false;
+        }
     }
-
-    @FXML
-    void buttonEightClick() {
-        outputTextField.appendText("8");
-    }
-
-    @FXML
-    void buttonNineClick() {
-        outputTextField.appendText("9");
-    }
-
-    @FXML
-    void buttonZeroClick() {
-        outputTextField.appendText("0");
-    }
-
 }

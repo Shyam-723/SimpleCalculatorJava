@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="myScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="433.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="example.simplecalculator.Controller">
       <Button fx:id="buttonZero" layoutX="39.0" layoutY="449.0" mnemonicParsing="false" onAction="#buttonZeroClick" prefHeight="75.0" prefWidth="74.0" text="0">
          <font>
@@ -22,7 +21,7 @@
             <Font name="Avenir Black" size="36.0" />
          </font>
       </Button>
-      <Button fx:id="buttonDiv" layoutX="306.0" layoutY="449.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="74.0" text="/">
+      <Button fx:id="buttonDiv" layoutX="306.0" layoutY="449.0" mnemonicParsing="false" onAction="#buttonDivClick" prefHeight="75.0" prefWidth="74.0" text="/">
          <font>
             <Font name="Avenir Black" size="36.0" />
          </font>
@@ -72,17 +71,17 @@
             <Font name="Avenir Black" size="36.0" />
          </font>
       </Button>
-      <Button fx:id="buttonMul" layoutX="306.0" layoutY="373.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="74.0" text="x">
+      <Button fx:id="buttonMul" layoutX="306.0" layoutY="373.0" mnemonicParsing="false" onAction="#buttonMulClick" prefHeight="75.0" prefWidth="74.0" text="*">
          <font>
             <Font name="Avenir Black" size="36.0" />
          </font>
       </Button>
-      <Button fx:id="buttonSub" layoutX="306.0" layoutY="297.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="74.0" text="-">
+      <Button fx:id="buttonSub" layoutX="306.0" layoutY="297.0" mnemonicParsing="false" onAction="#buttonSubClick" prefHeight="75.0" prefWidth="74.0" text="-">
          <font>
             <Font name="Avenir Black" size="36.0" />
          </font>
       </Button>
-      <Button fx:id="buttonAdd" layoutX="306.0" layoutY="221.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="74.0" text="+">
+      <Button fx:id="buttonAdd" layoutX="306.0" layoutY="221.0" mnemonicParsing="false" onAction="#buttonAddClick" prefHeight="75.0" prefWidth="74.0" text="+">
          <font>
             <Font name="Avenir Black" size="36.0" />
          </font>

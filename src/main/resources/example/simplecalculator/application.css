@@ -1,0 +1,8 @@
+#myScene {
+    -fx-background-color: gray;
+}
+
+#outputTextField {
+    -fx-alignment: center-right;
+    -fx-font-size: 50;
+}
