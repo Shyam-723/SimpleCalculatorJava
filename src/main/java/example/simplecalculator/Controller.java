@@ -2,6 +2,7 @@ package example.simplecalculator;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 
 public class Controller {
     @FXML
@@ -10,28 +11,32 @@ public class Controller {
     @FXML
     private TextField historyTextField;
 
-    private String currNumberString = "";
+    private String currNumberString = "", lastStoredFunction = "";
     private int calculatedNumber = 0;
+    private int storedValue = 0;
     private boolean isBinaryFunction = false;
 
 
-    private void CalculateNumber(String binaryFunction) {
-        int currNumber = updateCurrNumber();
+    private void calculateNumber(String binaryFunction) {
+        calculatedNumber = storedValue;
+        storedValue = updateCurrNumber();
 
         switch(binaryFunction){
             case "+":
-                calculatedNumber +=  currNumber;
+                calculatedNumber +=  storedValue;
                 break;
             case "-":
-                calculatedNumber -= currNumber;
+                calculatedNumber -= storedValue;
                 break;
             case "*":
-                calculatedNumber *= currNumber;
+                calculatedNumber *= storedValue;
                 break;
             case "/":
-                calculatedNumber /= currNumber;
+                calculatedNumber /= storedValue;
                 break;
         }
+
+        outputTextField.setText(calculatedNumber + "");
     }
 
     private int updateCurrNumber() {
@@ -39,29 +44,38 @@ public class Controller {
         return Integer.parseInt(currNumberString);
     }
 
-    @FXML void buttonAddClick() {
-        outputTextField.setText("+");
-        historyTextField.appendText(" + ");
-        isBinaryFunction = true;
+    @FXML void buttonEqualClick() {
+        if(!lastStoredFunction.isEmpty()) {
+            calculateNumber(lastStoredFunction);
+        }
+        else{
+            if(!historyTextField.getText().isEmpty()) {
+                storedValue = Integer.parseInt(outputTextField.getText());
+            }
+        }
     }
 
-    @FXML void buttonSubClick() {
-        outputTextField.setText("-");
-        historyTextField.appendText(" - ");
+    private void binaryFunction(String func){
+        buttonEqualClick();
+        outputTextField.setText(func);
+        historyTextField.appendText(" " + func + " ");
         isBinaryFunction = true;
+        lastStoredFunction = func;
     }
 
-    @FXML void buttonMulClick() {
-        outputTextField.setText("*");
-        historyTextField.appendText(" * ");
-        isBinaryFunction = true;
+    @FXML void buttonResetClick() {
+        outputTextField.setText("");
+        historyTextField.setText("");
+        isBinaryFunction = false;
+        lastStoredFunction = "";
+        calculatedNumber = 0;
+        storedValue = 0;
     }
 
-    @FXML void buttonDivClick() {
-        outputTextField.setText("/");
-        historyTextField.appendText(" / ");
-        isBinaryFunction = true;
-    }
+    @FXML void buttonAddClick() { binaryFunction("+"); }
+    @FXML void buttonSubClick() { binaryFunction("-"); }
+    @FXML void buttonMulClick() { binaryFunction("*"); }
+    @FXML void buttonDivClick() { binaryFunction("/"); }
 
     @FXML void buttonOneClick() { updateTextField("1"); }
     @FXML void buttonTwoClick() { updateTextField("2"); }

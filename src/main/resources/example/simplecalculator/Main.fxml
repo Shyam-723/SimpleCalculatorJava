@@ -11,12 +11,12 @@
             <Font name="Avenir Black" size="36.0" />
          </font>
       </Button>
-      <Button fx:id="buttonEquals" layoutX="113.0" layoutY="449.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="74.0" text="=">
+      <Button fx:id="buttonEquals" layoutX="113.0" layoutY="449.0" mnemonicParsing="false" onAction="#buttonEqualClick" prefHeight="75.0" prefWidth="74.0" text="=">
          <font>
             <Font name="Avenir Black" size="36.0" />
          </font>
       </Button>
-      <Button fx:id="buttonReset" layoutX="187.0" layoutY="449.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="74.0" text="C">
+      <Button fx:id="buttonReset" layoutX="187.0" layoutY="449.0" mnemonicParsing="false" onAction="#buttonResetClick" prefHeight="75.0" prefWidth="74.0" text="C">
          <font>
             <Font name="Avenir Black" size="36.0" />
          </font>

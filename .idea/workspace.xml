@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73d215de-050c-44d9-818d-5df9ce036c9f" name="Changes" comment="Added extra buttons, some styling, and updated logic for Binary Functions">
+    <list default="true" id="73d215de-050c-44d9-818d-5df9ce036c9f" name="Changes" comment="Updated logic for binary Functions. Added History Text Field">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/example/simplecalculator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/simplecalculator/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/example/simplecalculator/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/example/simplecalculator/Main.fxml" afterDir="false" />
     </list>
@@ -84,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723999114467</updated>
-      <workItem from="1723999115678" duration="5719000" />
+      <workItem from="1723999115678" duration="9304000" />
     </task>
     <task id="LOCAL-00001" summary="Intial set Up">
       <option name="closed" value="true" />
@@ -110,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724005422856</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updated logic for binary Functions. Added History Text Field">
+      <option name="closed" value="true" />
+      <created>1724006265481</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1724006265481</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +140,7 @@
     <MESSAGE value="Intial set Up" />
     <MESSAGE value="Basic number buttons functionalities" />
     <MESSAGE value="Added extra buttons, some styling, and updated logic for Binary Functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added extra buttons, some styling, and updated logic for Binary Functions" />
+    <MESSAGE value="Updated logic for binary Functions. Added History Text Field" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated logic for binary Functions. Added History Text Field" />
   </component>
 </project>
