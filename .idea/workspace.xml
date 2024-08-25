@@ -7,7 +7,6 @@
     <list default="true" id="73d215de-050c-44d9-818d-5df9ce036c9f" name="Changes" comment="Improved code readability. Fixed calculation logic when pressing buttons. Added Reset Button.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/example/simplecalculator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/simplecalculator/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/example/simplecalculator/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/example/simplecalculator/Main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1723999114467</updated>
       <workItem from="1723999115678" duration="15349000" />
-      <workItem from="1724565414509" duration="410000" />
+      <workItem from="1724565414509" duration="2505000" />
     </task>
     <task id="LOCAL-00001" summary="Intial set Up">
       <option name="closed" value="true" />
@@ -128,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724091243322</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Improved code readability. Fixed calculation logic when pressing buttons. Added Reset Button.">
+      <option name="closed" value="true" />
+      <created>1724565884832</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1724565884832</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

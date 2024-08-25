@@ -18,7 +18,7 @@ public class Controller {
     private String currNumberString = "", lastStoredFunction = "";
     private int calculatedNumber = 0;
     private int storedValue = 0;
-    private boolean isBinaryFunction = false;
+    private boolean isBinary = false;
 
 
     @FXML
@@ -83,35 +83,49 @@ public class Controller {
         }
     }
 
+    private void updateTextField(String value) {
+        if(value.equals("+") || value.equals("-") || value.equals("*") || value.equals("/")) {
+            outputTextField.setText(value);
+            historyTextField.appendText(" " + value + " ");
+            isBinary = true;
+        }
+        else if(isBinary){
+            isBinary = false;
+            outputTextField.setText(value);
+            historyTextField.appendText(value);
+        }
+        else{
+            outputTextField.appendText(value);
+            historyTextField.appendText(value);
+        }
+    }
+
     private int updateCurrNumber() {
         currNumberString = outputTextField.getText();
         return Integer.parseInt(currNumberString);
+    }
+
+    private void binaryFunction(String func) {
+        if (!lastStoredFunction.isEmpty() && !currNumberString.isEmpty()) {
+            calculateNumber(lastStoredFunction);
+        }
+        else{
+            calculatedNumber = updateCurrNumber();
+        }
+        lastStoredFunction = func;
+        updateTextField(func);
     }
 
     @FXML
     private void buttonEqualClick() {
         calculateNumber(lastStoredFunction);
         lastStoredFunction = "";  // Reset after calculation
-        isBinaryFunction = false; // Reset for new calculations
     }
 
-    private void binaryFunction(String func) {
-        if (!lastStoredFunction.isEmpty() && !currNumberString.isEmpty()) {
-            calculateNumber(lastStoredFunction);
-        } else {
-            calculatedNumber = updateCurrNumber();
-        }
-
-        outputTextField.setText(""); // Clear the field for the next number
-        historyTextField.appendText(" " + func + " ");
-        isBinaryFunction = true;
-        lastStoredFunction = func;
-    }
 
     @FXML void buttonResetClick() {
         outputTextField.setText("");
         historyTextField.setText("");
-        isBinaryFunction = false;
         lastStoredFunction = "";
         calculatedNumber = 0;
         storedValue = 0;
@@ -132,15 +146,4 @@ public class Controller {
     @FXML void buttonEightClick() { updateTextField("8"); }
     @FXML void buttonNineClick() { updateTextField("9"); }
     @FXML void buttonZeroClick() { updateTextField("0"); }
-
-    private void updateTextField(String value) {
-        if (!isBinaryFunction) {
-            outputTextField.appendText(value);
-        } else {
-            outputTextField.setText(value);
-            isBinaryFunction = false;
-        }
-
-        historyTextField.appendText(value);
-    }
 }
