@@ -99,9 +99,13 @@ public class Controller {
             errorShown = false;
             buttonResetClick();
         } else if(value.equals("+") || value.equals("-") || value.equals("*") || value.equals("/")) {
-            outputTextField.setText(value);
-            historyTextField.appendText(" " + value + " ");
-            isBinary = true;
+            if(isBinary){
+                showError();
+            } else {
+                outputTextField.setText(value);
+                historyTextField.appendText(" " + value + " ");
+                isBinary = true;
+            }
         } else if(isBinary){
             isBinary = false;
             outputTextField.setText(value);

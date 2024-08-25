@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73d215de-050c-44d9-818d-5df9ce036c9f" name="Changes" comment="Made Error Handling Function">
+    <list default="true" id="73d215de-050c-44d9-818d-5df9ce036c9f" name="Changes" comment="Switched all logic to BigDecimal. Made TextFields non-editable.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/example/simplecalculator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/simplecalculator/Controller.java" afterDir="false" />
     </list>
@@ -85,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1723999114467</updated>
       <workItem from="1723999115678" duration="15349000" />
-      <workItem from="1724565414509" duration="3986000" />
+      <workItem from="1724565414509" duration="5290000" />
     </task>
     <task id="LOCAL-00001" summary="Intial set Up">
       <option name="closed" value="true" />
@@ -151,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724605413720</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Switched all logic to BigDecimal. Made TextFields non-editable.">
+      <option name="closed" value="true" />
+      <created>1724606522259</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1724606522259</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +184,7 @@
     <MESSAGE value="Improved code readability. Fixed calculation logic when pressing buttons. Added Reset Button." />
     <MESSAGE value="Fixed Binary Functions not showing in textField. Cleaned up code." />
     <MESSAGE value="Made Error Handling Function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made Error Handling Function" />
+    <MESSAGE value="Switched all logic to BigDecimal. Made TextFields non-editable." />
+    <option name="LAST_COMMIT_MESSAGE" value="Switched all logic to BigDecimal. Made TextFields non-editable." />
   </component>
 </project>
