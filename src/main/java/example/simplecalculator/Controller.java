@@ -19,6 +19,7 @@ public class Controller {
     private int calculatedNumber = 0;
     private int storedValue = 0;
     private boolean isBinary = false;
+    private boolean errorShown = false;
 
 
     @FXML
@@ -66,7 +67,7 @@ public class Controller {
                     if (storedValue != 0) {
                         calculatedNumber /= storedValue;
                     } else {
-                        outputTextField.setText("Error");
+                        showError();
                         return;
                     }
                     break;
@@ -84,17 +85,18 @@ public class Controller {
     }
 
     private void updateTextField(String value) {
-        if(value.equals("+") || value.equals("-") || value.equals("*") || value.equals("/")) {
+        if(errorShown){
+            errorShown = false;
+            buttonResetClick();
+        } else if(value.equals("+") || value.equals("-") || value.equals("*") || value.equals("/")) {
             outputTextField.setText(value);
             historyTextField.appendText(" " + value + " ");
             isBinary = true;
-        }
-        else if(isBinary){
+        } else if(isBinary){
             isBinary = false;
             outputTextField.setText(value);
             historyTextField.appendText(value);
-        }
-        else{
+        } else{
             outputTextField.appendText(value);
             historyTextField.appendText(value);
         }
@@ -114,6 +116,11 @@ public class Controller {
         }
         lastStoredFunction = func;
         updateTextField(func);
+    }
+
+    private void showError(){
+        outputTextField.setText("Error");
+        errorShown = true;
     }
 
     @FXML
