@@ -2,6 +2,7 @@ package example.simplecalculator;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -38,8 +39,9 @@ public class Controller {
 
         if(keyEvent.getCode().isDigitKey()){
             updateTextField(key);
-        }
-        else{
+        } else if(keyEvent.getCode() == KeyCode.ENTER) {
+            calculateNumber();
+        } else{
             switch (key){
                 case "+": binaryFunction("+");
                 break;
@@ -49,49 +51,42 @@ public class Controller {
                 break;
                 case "/": binaryFunction("/");
                 break;
-                case "=": calculateNumber(lastStoredFunction);
-                break;
-                case "c": buttonResetClick();
-                break;
-                case "C": buttonResetClick();
+                case "=": calculateNumber();
                 break;
             }
         }
     }
 
-    private void calculateNumber(String binaryFunction) {
-        if (!lastStoredFunction.isEmpty()) {
-            storedValue = updateCurrNumber();
+    private void calculateNumber() {
+        if (currNumberString.isEmpty())
+            showError();
 
-            switch (lastStoredFunction) {
-                case "+":
-                    calculatedNumber = calculatedNumber.add(storedValue).setScale(5, RoundingMode.HALF_UP).stripTrailingZeros();
-                    break;
-                case "-":
-                    calculatedNumber = calculatedNumber.subtract(storedValue).setScale(5, RoundingMode.HALF_UP).stripTrailingZeros();
-                    break;
-                case "*":
-                    calculatedNumber = calculatedNumber.multiply(storedValue).setScale(5, RoundingMode.HALF_UP).stripTrailingZeros();
-                    break;
-                case "/":
-                    if (storedValue.compareTo(BigDecimal.ZERO) != 0) {
-                        calculatedNumber = calculatedNumber.divide(storedValue).setScale(5, RoundingMode.HALF_UP).stripTrailingZeros();
-                    } else {
-                        showError();
-                        return;
-                    }
-                    break;
-            }
+        storedValue = updateCurrNumber();
 
-            outputTextField.setText(String.valueOf(calculatedNumber));
-            // Reset for the next operation
-            currNumberString = "";
-            lastStoredFunction = binaryFunction.equals("=") ? "" : binaryFunction;
-        } else {
-            // First operation case
-            calculatedNumber = updateCurrNumber();
-            lastStoredFunction = binaryFunction.equals("=") ? "" : binaryFunction;
+        switch (lastStoredFunction) {
+            case "+":
+                calculatedNumber = calculatedNumber.add(storedValue).setScale(5, RoundingMode.HALF_UP).stripTrailingZeros();
+                break;
+            case "-":
+                calculatedNumber = calculatedNumber.subtract(storedValue).setScale(5, RoundingMode.HALF_UP).stripTrailingZeros();
+                break;
+            case "*":
+                calculatedNumber = calculatedNumber.multiply(storedValue).setScale(5, RoundingMode.HALF_UP).stripTrailingZeros();
+                break;
+            case "/":
+                if (storedValue.compareTo(BigDecimal.ZERO) != 0) {
+                    calculatedNumber = calculatedNumber.divide(storedValue).setScale(5, RoundingMode.HALF_UP).stripTrailingZeros();
+                } else {
+                    showError();
+                    return;
+                }
+                break;
         }
+
+        outputTextField.setText(String.valueOf(calculatedNumber));
+        currNumberString = "";
+        lastStoredFunction = "";
+
     }
 
     private void updateTextField(String value) {
@@ -108,9 +103,11 @@ public class Controller {
             }
         } else if(isBinary){
             isBinary = false;
+            currNumberString = value;
             outputTextField.setText(value);
             historyTextField.appendText(value);
         } else{
+            currNumberString += value;
             outputTextField.appendText(value);
             historyTextField.appendText(value);
         }
@@ -123,7 +120,7 @@ public class Controller {
 
     private void binaryFunction(String func) {
         if (!lastStoredFunction.isEmpty() && !currNumberString.isEmpty()) {
-            calculateNumber(lastStoredFunction);
+            calculateNumber();
         }
         else{
             calculatedNumber = updateCurrNumber();
@@ -139,7 +136,7 @@ public class Controller {
 
     @FXML
     private void buttonEqualClick() {
-        calculateNumber(lastStoredFunction);
+        calculateNumber();
         lastStoredFunction = "";  // Reset after calculation
     }
 
