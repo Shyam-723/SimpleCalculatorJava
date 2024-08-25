@@ -3,8 +3,12 @@ package example.simplecalculator;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 
 public class Controller {
+    @FXML
+    private AnchorPane myScene;
+
     @FXML
     private TextField outputTextField;
 
@@ -17,26 +21,66 @@ public class Controller {
     private boolean isBinaryFunction = false;
 
 
-    private void calculateNumber(String binaryFunction) {
-        calculatedNumber = storedValue;
-        storedValue = updateCurrNumber();
+    @FXML
+    private void onKeyReleased(KeyEvent keyEvent) {
+        String key = keyEvent.getText();
 
-        switch(binaryFunction){
-            case "+":
-                calculatedNumber +=  storedValue;
-                break;
-            case "-":
-                calculatedNumber -= storedValue;
-                break;
-            case "*":
-                calculatedNumber *= storedValue;
-                break;
-            case "/":
-                calculatedNumber /= storedValue;
-                break;
+        if(keyEvent.getCode().isDigitKey()){
+            updateTextField(key);
         }
+        else{
+            switch (key){
+                case "+": binaryFunction("+");
+                break;
+                case "-": binaryFunction("-");
+                break;
+                case "*": binaryFunction("*");
+                break;
+                case "/": binaryFunction("/");
+                break;
+                case "=": calculateNumber(lastStoredFunction);
+                break;
+                case "c": buttonResetClick();
+                break;
+                case "C": buttonResetClick();
+                break;
+            }
+        }
+    }
 
-        outputTextField.setText(calculatedNumber + "");
+    private void calculateNumber(String binaryFunction) {
+        if (!lastStoredFunction.isEmpty()) {
+            storedValue = updateCurrNumber();
+
+            switch (lastStoredFunction) {
+                case "+":
+                    calculatedNumber += storedValue;
+                    break;
+                case "-":
+                    calculatedNumber -= storedValue;
+                    break;
+                case "*":
+                    calculatedNumber *= storedValue;
+                    break;
+                case "/":
+                    if (storedValue != 0) {
+                        calculatedNumber /= storedValue;
+                    } else {
+                        outputTextField.setText("Error");
+                        return;
+                    }
+                    break;
+            }
+
+            outputTextField.setText(String.valueOf(calculatedNumber));
+            // Reset for the next operation
+            currNumberString = "";
+            lastStoredFunction = binaryFunction.equals("=") ? "" : binaryFunction;
+        } else {
+            // First operation case
+            calculatedNumber = updateCurrNumber();
+            lastStoredFunction = binaryFunction.equals("=") ? "" : binaryFunction;
+        }
     }
 
     private int updateCurrNumber() {
@@ -44,20 +88,21 @@ public class Controller {
         return Integer.parseInt(currNumberString);
     }
 
-    @FXML void buttonEqualClick() {
-        if(!lastStoredFunction.isEmpty()) {
-            calculateNumber(lastStoredFunction);
-        }
-        else{
-            if(!historyTextField.getText().isEmpty()) {
-                storedValue = Integer.parseInt(outputTextField.getText());
-            }
-        }
+    @FXML
+    private void buttonEqualClick() {
+        calculateNumber(lastStoredFunction);
+        lastStoredFunction = "";  // Reset after calculation
+        isBinaryFunction = false; // Reset for new calculations
     }
 
-    private void binaryFunction(String func){
-        buttonEqualClick();
-        outputTextField.setText(func);
+    private void binaryFunction(String func) {
+        if (!lastStoredFunction.isEmpty() && !currNumberString.isEmpty()) {
+            calculateNumber(lastStoredFunction);
+        } else {
+            calculatedNumber = updateCurrNumber();
+        }
+
+        outputTextField.setText(""); // Clear the field for the next number
         historyTextField.appendText(" " + func + " ");
         isBinaryFunction = true;
         lastStoredFunction = func;

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="myScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="433.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="example.simplecalculator.Controller">
+<AnchorPane fx:id="myScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#onKeyReleased" prefHeight="574.0" prefWidth="433.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="example.simplecalculator.Controller">
       <Button fx:id="buttonZero" layoutX="39.0" layoutY="449.0" mnemonicParsing="false" onAction="#buttonZeroClick" prefHeight="75.0" prefWidth="74.0" text="0">
          <font>
             <Font name="Avenir Black" size="36.0" />
