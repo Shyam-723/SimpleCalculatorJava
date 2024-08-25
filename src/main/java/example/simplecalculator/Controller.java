@@ -5,6 +5,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Controller {
     @FXML
     private AnchorPane myScene;
@@ -15,9 +18,16 @@ public class Controller {
     @FXML
     private TextField historyTextField;
 
+    @FXML
+    public void initialize() {
+        // Make the outputTextField and historyTextField non-editable
+        outputTextField.setEditable(false);
+        historyTextField.setEditable(false);
+    }
+
     private String currNumberString = "", lastStoredFunction = "";
-    private int calculatedNumber = 0;
-    private int storedValue = 0;
+    private BigDecimal calculatedNumber = BigDecimal.ZERO;
+    private BigDecimal storedValue = BigDecimal.ZERO;
     private boolean isBinary = false;
     private boolean errorShown = false;
 
@@ -55,17 +65,17 @@ public class Controller {
 
             switch (lastStoredFunction) {
                 case "+":
-                    calculatedNumber += storedValue;
+                    calculatedNumber = calculatedNumber.add(storedValue).setScale(5, RoundingMode.HALF_UP).stripTrailingZeros();
                     break;
                 case "-":
-                    calculatedNumber -= storedValue;
+                    calculatedNumber = calculatedNumber.subtract(storedValue).setScale(5, RoundingMode.HALF_UP).stripTrailingZeros();
                     break;
                 case "*":
-                    calculatedNumber *= storedValue;
+                    calculatedNumber = calculatedNumber.multiply(storedValue).setScale(5, RoundingMode.HALF_UP).stripTrailingZeros();
                     break;
                 case "/":
-                    if (storedValue != 0) {
-                        calculatedNumber /= storedValue;
+                    if (storedValue.compareTo(BigDecimal.ZERO) != 0) {
+                        calculatedNumber = calculatedNumber.divide(storedValue).setScale(5, RoundingMode.HALF_UP).stripTrailingZeros();
                     } else {
                         showError();
                         return;
@@ -102,9 +112,9 @@ public class Controller {
         }
     }
 
-    private int updateCurrNumber() {
+    private BigDecimal updateCurrNumber() {
         currNumberString = outputTextField.getText();
-        return Integer.parseInt(currNumberString);
+        return new BigDecimal(currNumberString);
     }
 
     private void binaryFunction(String func) {
@@ -134,8 +144,8 @@ public class Controller {
         outputTextField.setText("");
         historyTextField.setText("");
         lastStoredFunction = "";
-        calculatedNumber = 0;
-        storedValue = 0;
+        calculatedNumber = BigDecimal.ZERO;
+        storedValue = BigDecimal.ZERO;
     }
 
     @FXML void buttonAddClick() { binaryFunction("+"); }
