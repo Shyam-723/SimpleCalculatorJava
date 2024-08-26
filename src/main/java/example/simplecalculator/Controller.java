@@ -94,13 +94,9 @@ public class Controller {
             errorShown = false;
             buttonResetClick();
         } else if(value.equals("+") || value.equals("-") || value.equals("*") || value.equals("/")) {
-            if(isBinary){
-                showError();
-            } else {
-                outputTextField.setText(value);
-                historyTextField.appendText(" " + value + " ");
-                isBinary = true;
-            }
+            outputTextField.setText(value);
+            historyTextField.appendText(" " + value + " ");
+            isBinary = true;
         } else if(isBinary){
             isBinary = false;
             currNumberString = value;
@@ -119,6 +115,11 @@ public class Controller {
     }
 
     private void binaryFunction(String func) {
+        if(isBinary){
+            showError();
+            return;
+        }
+
         if (!lastStoredFunction.isEmpty() && !currNumberString.isEmpty()) {
             calculateNumber();
         }
@@ -136,6 +137,11 @@ public class Controller {
 
     @FXML
     private void buttonEqualClick() {
+        if(isBinary){
+            showError();
+            return;
+        }
+
         calculateNumber();
         lastStoredFunction = "";  // Reset after calculation
     }
