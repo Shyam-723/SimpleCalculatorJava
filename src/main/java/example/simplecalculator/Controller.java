@@ -75,7 +75,8 @@ public class Controller {
                 break;
             case "/":
                 if (storedValue.compareTo(BigDecimal.ZERO) != 0) {
-                    calculatedNumber = calculatedNumber.divide(storedValue).setScale(5, RoundingMode.HALF_UP).stripTrailingZeros();
+                    calculatedNumber = calculatedNumber.divide(storedValue,5, RoundingMode.HALF_UP);
+                    calculatedNumber = calculatedNumber.stripTrailingZeros();
                 } else {
                     showError();
                     return;

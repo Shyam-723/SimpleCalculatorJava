@@ -3,15 +3,27 @@
     <output-path>$PROJECT_DIR$/out/artifacts/SimpleCalculator_jar</output-path>
     <root id="archive" name="SimpleCalculator.jar">
       <element id="module-output" name="SimpleCalculator" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/22.0.1/javafx-graphics-22.0.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/22.0.1/javafx-fxml-22.0.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/22.0.1/javafx-fxml-22.0.1-mac-aarch64.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/22.0.1/javafx-controls-22.0.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/22.0.1/javafx-graphics-22.0.1-mac-aarch64.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/22.0.1/javafx-base-22.0.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/22.0.1/javafx-controls-22.0.1-mac-aarch64.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/22.0.1/javafx-base-22.0.1-mac-aarch64.jar" path-in-jar="/" />
-      <element id="library" level="project" name="javafx-swt" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/22.0.1/javafx-fxml-22.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/22.0.1/javafx-graphics-22.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/22.0.1/javafx-graphics-22.0.1-mac-aarch64.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/22.0.1/javafx-fxml-22.0.1-mac-aarch64.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/22.0.1/javafx-controls-22.0.1-mac-aarch64.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/22.0.1/javafx-controls-22.0.1.jar" path-in-jar="/" />
+      <element id="file-copy" path="$USER_HOME$/Applications/Java/javafx-sdk-22.0.2/lib/libdecora_sse.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Applications/Java/javafx-sdk-22.0.2/lib/libfxplugins.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Applications/Java/javafx-sdk-22.0.2/lib/libglass.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Applications/Java/javafx-sdk-22.0.2/lib/libglib-lite.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Applications/Java/javafx-sdk-22.0.2/lib/libgstreamer-lite.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Applications/Java/javafx-sdk-22.0.2/lib/libjavafx_font.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Applications/Java/javafx-sdk-22.0.2/lib/libjavafx_iio.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Applications/Java/javafx-sdk-22.0.2/lib/libjfxmedia_avf.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Applications/Java/javafx-sdk-22.0.2/lib/libjfxmedia.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Applications/Java/javafx-sdk-22.0.2/lib/libjfxwebkit.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Applications/Java/javafx-sdk-22.0.2/lib/libprism_common.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Applications/Java/javafx-sdk-22.0.2/lib/libprism_es2.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Applications/Java/javafx-sdk-22.0.2/lib/libprism_sw.dylib" />
     </root>
   </artifact>
 </component>

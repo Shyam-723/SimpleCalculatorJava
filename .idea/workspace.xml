@@ -9,15 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73d215de-050c-44d9-818d-5df9ce036c9f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SimpleCalculator_jar.xml" afterDir="false" />
+    <list default="true" id="73d215de-050c-44d9-818d-5df9ce036c9f" name="Changes" comment="Added error handling">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/SimpleCalculator_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/SimpleCalculator_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/example/simplecalculator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/simplecalculator/Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,29 +61,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JAR Application.SimpleCalculator.jar.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SimpleCalculator [javafx:jlink].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SimpleCalculator [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SimpleCalculator [verify].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloApplication.executor": "Run",
+    "Application.Main.executor": "Run",
+    "JAR Application.SimpleCalculator.jar.executor": "Run",
+    "Maven.SimpleCalculator [clean,install].executor": "Run",
+    "Maven.SimpleCalculator [clean,javafx:run].executor": "Run",
+    "Maven.SimpleCalculator [clean,package].executor": "Run",
+    "Maven.SimpleCalculator [clean].executor": "Run",
+    "Maven.SimpleCalculator [javafx:jlink].executor": "Run",
+    "Maven.SimpleCalculator [javafx:jpackage].executor": "Run",
+    "Maven.SimpleCalculator [package].executor": "Run",
+    "Maven.SimpleCalculator [verify].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/example/simplecalculator" />
@@ -83,19 +96,13 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
+      <command value="mvn clean install" />
       <command value="mvn javafx:jlink" />
+      <command value="mvn javafx:jpackage" />
+      <command value="mvn clean package" />
+      <command value="mvn clean javafx:run" />
+      <command value="mvn clean" />
     </option>
-  </component>
-  <component name="RunManager">
-    <configuration name="SimpleCalculator.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/SimpleCalculator_jar/SimpleCalculator.jar" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JAR Application.SimpleCalculator.jar" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -115,7 +122,8 @@
       <updated>1723999114467</updated>
       <workItem from="1723999115678" duration="15349000" />
       <workItem from="1724565414509" duration="10338000" />
-      <workItem from="1724694653745" duration="382000" />
+      <workItem from="1724694653745" duration="3794000" />
+      <workItem from="1724814406249" duration="1566000" />
     </task>
     <task id="LOCAL-00001" summary="Intial set Up">
       <option name="closed" value="true" />
@@ -205,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724619799649</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added error handling">
+      <option name="closed" value="true" />
+      <created>1724695086522</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1724695086522</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +249,7 @@
     <MESSAGE value="Switched all logic to BigDecimal. Made TextFields non-editable." />
     <MESSAGE value="Checkpoint before trying new error handling checks" />
     <MESSAGE value="Fixed Bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Bugs" />
+    <MESSAGE value="Added error handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added error handling" />
   </component>
 </project>
